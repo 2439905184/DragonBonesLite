@@ -3,173 +3,192 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:orientation="vertical">
-
-	<Button
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:text="打开"
-		android:id="@+id/openfile"/>
-
-	<Button
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:text="导入"
-		android:id="@+id/importFile"
-		android:onClick="importFile"/>
-
-	<Button
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:text="导出"
-		android:id="@+id/build"
-		android:onClick="build"/>
-
-	<ImageView
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:src="@android:drawable/ic_delete"/>
-
-	<Button
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:text="项目设置"
-		android:onClick="settings"/>
-
-	<Button
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:text="骨骼+"/>
-
-	<TextView
-		android:layout_height="wrap_content"
-		android:textAppearance="?android:attr/textAppearanceLarge"
-		android:layout_width="wrap_content"
-		android:text="库"/>
+	android:orientation="vertical"
+	android:background="#FFFFEAEA">
 
 	<RelativeLayout
 		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:layout_gravity="right">
+		android:layout_width="match_parent"
+		android:id="@+id/lol"
+		android:background="#FFEBC1C1">
 
-		<ExpandableListView
-			android:layout_height="0dp"
-			android:layout_width="61dp"
-			android:id="@+id/res"/>
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="打开"
+			android:id="@+id/openfile"/>
 
-	</RelativeLayout>
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="导入"
+			android:id="@+id/importFile"
+			android:layout_below="@+id/openfile"
+			android:onClick="importFile"/>
 
-	<ScrollView
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content">
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="导出"
+			android:id="@+id/build"
+			android:onClick="build"
+			android:layout_below="@id/importFile"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="骨骼+"
+			android:id="@+id/addBone"
+			android:layout_below="@+id/build"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="项目设置"
+			android:onClick="settings"
+			android:layout_below="@+id/addBone"
+			android:id="@+id/mainButton1"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="关于"
+			android:layout_below="@+id/mainButton1"
+			android:onClick="about"/>
+
+		<RelativeLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:background="#FFD454B3"
+			android:layout_toRightOf="@+id/openfile"
+			android:id="@+id/edit">
+
+			<ImageView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:src="@android:drawable/ic_delete"/>
+
+		</RelativeLayout>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:text="库"
+			android:layout_toRightOf="@id/edit"
+			android:id="@+id/mainTextView1"/>
 
 		<LinearLayout
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
-			android:orientation="vertical">
+			android:orientation="vertical"
+			android:layout_toRightOf="@id/mainTextView1">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:text="posation"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:text="x"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:ems="1"
+				android:layout_marginTop="0dp"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_width="wrap_content"
+				android:text="y"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:ems="1"/>
 
 		</LinearLayout>
 
-	</ScrollView>
+	</RelativeLayout>
 
 	<LinearLayout
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
-		android:orientation="vertical">
+		android:orientation="horizontal">
 
 		<TextView
-			android:layout_height="wrap_content"
+			android:layout_height="match_parent"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:layout_width="wrap_content"
-			android:text="posation"/>
+			android:text="00:00"
+			android:gravity="center"/>
 
-		<TextView
-			android:layout_height="wrap_content"
-			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:layout_width="wrap_content"
-			android:text="x"/>
-
-		<EditText
+		<Button
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
-			android:ems="1"/>
+			android:text="洋葱皮"/>
 
-		<TextView
-			android:layout_height="wrap_content"
-			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:layout_width="wrap_content"
-			android:text="y"/>
-
-		<EditText
+		<ToggleButton
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
-			android:ems="1"/>
+			android:textOn="自动关键帧:打开"
+			android:textOff="自动关键帧:关闭"
+			android:text="自动关键帧:默认关"/>
 
-	</LinearLayout>
-
-	<HorizontalScrollView
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content">
-
-		<LinearLayout
-			android:layout_height="wrap_content"
+		<HorizontalScrollView
+			android:layout_height="match_parent"
 			android:layout_width="wrap_content"
-			android:orientation="vertical">
+			android:background="#FF956161">
 
 			<LinearLayout
-				android:layout_height="wrap_content"
+				android:layout_height="match_parent"
 				android:layout_width="wrap_content"
 				android:orientation="horizontal">
 
-				<TextView
-					android:layout_height="match_parent"
-					android:textAppearance="?android:attr/textAppearanceLarge"
-					android:layout_width="wrap_content"
-					android:text="00:00"
-					android:gravity="center"/>
-
-				<Button
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:text="洋葱皮"/>
-
-				<Button
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:text="自动关键帧"/>
-
 				<ImageView
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:src="@android:drawable/ic_delete"/>
-
-				<EditText
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:ems="10"/>
+					android:layout_height="50dp"
+					android:layout_width="500dp"
+					android:background="@drawable/image_1"/>
 
 			</LinearLayout>
 
-			<TextView
-				android:layout_height="wrap_content"
-				android:textAppearance="?android:attr/textAppearanceLarge"
-				android:layout_width="wrap_content"
-				android:text="Animation name"/>
+		</HorizontalScrollView>
 
-			<TextView
-				android:layout_height="wrap_content"
-				android:layout_width="wrap_content"
-				android:text="bone"/>
+	</LinearLayout>
 
-			<TextView
-				android:layout_height="wrap_content"
-				android:textAppearance="?android:attr/textAppearanceLarge"
-				android:layout_width="wrap_content"
-				android:text="for"/>
+	<RelativeLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:background="#FF3B8322">
 
-		</LinearLayout>
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:text="骨架"
+			android:id="@+id/mainTextView2"/>
 
-	</HorizontalScrollView>
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="添加动画+"
+			android:layout_below="@id/mainTextView2"
+			android:onClick="addAnim"
+			android:id="@+id/mainButton2"/>
+
+		<ListView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_below="@id/mainButton2"
+			android:id="@+id/AnimTracksView"/>
+
+	</RelativeLayout>
 
 </LinearLayout>
 
